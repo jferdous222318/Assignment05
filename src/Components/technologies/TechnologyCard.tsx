@@ -1,3 +1,12 @@
+import { MdOutlineStar } from "react-icons/md";
+import type { Technology } from "../../Types/types";
+
+interface TechnologyCardProps {
+  tech: Technology;
+  isAdded: boolean;
+  onAdd: (tech: Technology) => void;
+}
+
 const TechnologyCard = ({
   tech,
   isAdded,
@@ -5,7 +14,7 @@ const TechnologyCard = ({
 }: TechnologyCardProps) => {
   return (
     <div className="border rounded-xl p-5 shadow-sm bg-white flex flex-col justify-between">
-      
+
       <div className="flex justify-between items-start">
         <img
           src={tech.icon}
@@ -27,7 +36,7 @@ const TechnologyCard = ({
       </p>
 
       <div className="flex gap-2 items-center text-xs text-gray-600 mt-3">
-        
+
         <span className="px-2 py-1 bg-gray-100 rounded-full">
           {tech.category}
         </span>
@@ -46,11 +55,10 @@ const TechnologyCard = ({
       <button
         onClick={() => onAdd(tech)}
         //disabled={isAdded}
-        className={`py-2 mt-4 rounded-lg font-medium ${
-          isAdded
-            ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-            : "bg-black text-white hover:bg-gray-800"
-        }`}
+        className={`py-2 mt-4 rounded-lg font-medium ${isAdded
+          ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+          : "bg-black text-white hover:bg-gray-800"
+          }`}
       >
         {isAdded ? "✓ Added to Stack" : "Add to Stack"}
       </button>

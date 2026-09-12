@@ -50,7 +50,6 @@ function App() {
         <YourStackTech stack={stack} onRemove={handleRemove} onRemoveAll={handleRemoveAll} />
       
       </div>
-       <Footer/>
       <ToastContainer position="top-right" autoClose={2000} />
     </>
   )
